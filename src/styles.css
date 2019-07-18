@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px auto;
+}
+
+label {
+  display: inline-block;
+  text-align: right;
+  width: calc(50% - 10px);
+  margin-right: 10px;
+}
+input {
+  width: 100px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 20px;
+  margin: 20px auto;
+}
