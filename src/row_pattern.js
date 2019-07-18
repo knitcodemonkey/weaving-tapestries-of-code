@@ -7,6 +7,9 @@ const row_pattern = (
   suffix_length,
   stitches_per_row
 ) => {
+  if (stitches_per_row < 0) {
+    return "Please review your calculations and try again";
+  }
   let stitches = [preface];
 
   for (

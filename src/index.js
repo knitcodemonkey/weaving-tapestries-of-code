@@ -53,11 +53,12 @@ function App() {
       <div className="pattern">
         <h1>Your Custom Pattern</h1>
         <p>Cast on {total_number_of_stitches} stitches</p>
-        {Diamond_Brocade_Stitch(total_number_of_stitches).map((row, index) => (
-          <p key={`Diamond_Brocade_Stitch_Row_${index}`}>
-            Row {index + 1}: {row}
-          </p>
-        ))}
+        {total_number_of_stitches > 0 &&
+          Diamond_Brocade_Stitch(total_number_of_stitches).map((row, index) => (
+            <p key={`Diamond_Brocade_Stitch_Row_${index}`}>
+              Row {index + 1}: {row}
+            </p>
+          ))}
       </div>
     </div>
   );
