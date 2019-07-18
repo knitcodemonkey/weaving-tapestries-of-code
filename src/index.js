@@ -8,7 +8,6 @@ const stitch_patterns = [{
   "row_repeat": 8,
   "row_extra": 1,
   "pattern_repeat": 8
-
 }]
 
 function App() {

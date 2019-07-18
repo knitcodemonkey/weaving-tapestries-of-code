@@ -16,5 +16,3 @@ do {
   project_length += pattern.rows.length * gauge.rows_per_inch
 } while (project_length < desired_length)
 
-
-
