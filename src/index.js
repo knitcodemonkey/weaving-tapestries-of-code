@@ -6,7 +6,7 @@ import "./styles.css";
 const stitch_patterns = [{
   "name": "Diamond Brocade Stitch",
   "row_repeat": 8,
-  "row_extra": 1,
+  "extra_row_stitches": 1,
   "pattern_repeat": 8
 }]
 
@@ -19,15 +19,13 @@ function App() {
   const calculateNumberOfStitches = () => {
     const required_stitches_for_length =
       desired_length_in_inches * stitches_per_inch;
-    if (required_stitches_for_length < stitch_pattern.row_repeat + stitch_pattern.row_extra) {
-      return `The pattern requires a minimum of ${stitch_pattern.row_repeat + stitch_pattern.row_extra} stitches, but there are only ${required_stitches_for_length} in this row`
+    if (required_stitches_for_length < stitch_pattern.row_repeat + stitch_pattern.extra_row_stitches) {
+      return `The pattern requires a minimum of ${stitch_pattern.row_repeat + stitch_pattern.extra_row_stitches} stitches, but there are only ${required_stitches_for_length} in this row`
     }
-
-
 
     // By rounding, we choose the closer of the two measurements to the one you wanted. 
     const stitches_per_row = Math.round(required_stitches_for_length / stitch_pattern.row_repeat) * stitch_pattern.row_repeat
-      + stitch_pattern.row_extra
+      + stitch_pattern.extra_row_stitches
 
     // set to state
     setTotalStitches(stitches_per_row);
@@ -72,6 +70,7 @@ function App() {
         </div>
         <button type="submit">Generate Pattern</button>
       </form>
+
       <div className="pattern">
         {total_number_of_stitches > stitch_pattern.row_repeat}
         <h1>Your {stitch_pattern ? stitch_pattern.name : "Custom"} Pattern</h1>
